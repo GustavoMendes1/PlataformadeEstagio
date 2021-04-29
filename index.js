@@ -4,6 +4,7 @@ const bodyparser = require("body-parser")
 const connnection = require('./database/database');
 
 const userController = require("./users/UserController");
+const homeController = require("./home/HomeController");
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/",userController);
+app.use("/",homeController);
 
 app.listen(8081,() =>{
     console.log("Aplicação OK");

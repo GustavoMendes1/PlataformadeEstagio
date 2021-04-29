@@ -4,14 +4,16 @@
     <div class="row">
         <div class="login-form">
             <h3>CatchJob</h3>
-            <form class="form">          
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+            <form class="form"  method="post" >          
+                    <input type="text" name="email" class="form-control" placeholder="Your Email *" value="" />
                     <br>
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />               
+                    <input type="password" name="senha" class="form-control" placeholder="Your Password *" value="" />               
                     <br>
-                    <input type="submit" class="btnSubmit" value="Login" />
+                    <input type="submit" class="btnSubmit" value="Login" formaction="/login/users" />
                     <br>
                     <a href="#" class="ForgetPwd">Esqueceu sua senha?</a>    
+                    <hr>
+                    <input type="submit" class="btnSubmit" value="Registre-se"/>                
             </form>
         </div>
     </div>
