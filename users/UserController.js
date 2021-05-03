@@ -8,19 +8,22 @@ router.get("/login", (req, res)=>{
 
 router.post("/login/users", (req, res)=>{
     var email = req.body.email;
-    var email = req.body.senha;
-
-    if(!isNaN(email) && !isNaN(senha)){
-        Category.destroy({
-            where:{
-                email:email,
-                senha:senha
-            }
-        }).then(()=>{
-            res.redirect("/home/home");
-        }) }else{
-            console.log('Erro no usuário');
+    var senha = req.body.senha;
+   
+    users.findOne({
+        where:{
+            email:email,
+            senha:senha
         }
+         
+    }).then(user=>{
+        //console.log(user);
+        if(user.email == email && user.senha == senha) {
+            res.redirect("/vagas");
+        }
+    }).catch(err => {
+        console.error(err)
+    })
     
 })
 
